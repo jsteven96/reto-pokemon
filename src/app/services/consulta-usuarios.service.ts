@@ -32,6 +32,22 @@ export class ConsultaUsuariosService {
     sessionStorage.setItem('datosUsuario', JSON.stringify(nuevoArreglo));
   }
 
+  cambiarEstadoUsuarioTodosLosUsuarios(estado: boolean) {
+    const stringData = sessionStorage.getItem('datosUsuario');
+    const datosUsuarios: User[] = JSON.parse(stringData ? stringData : '[]');
+    const nuevoArreglo = datosUsuarios.map((elemento) => {
+      if (elemento.autenticado != estado) {
+        return {
+          nombre: elemento.nombre,
+          contrasenia: elemento.contrasenia,
+          autenticado: estado,
+        }
+      }
+      return elemento;
+    });
+    sessionStorage.setItem('datosUsuario', JSON.stringify(nuevoArreglo));
+  }
+
   buscarUsuarioAutenticado() {
     const stringData = sessionStorage.getItem('datosUsuario');
     const datosUsuarios: User[] = JSON.parse(stringData ? stringData : '[]');

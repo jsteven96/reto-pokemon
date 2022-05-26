@@ -1,0 +1,20 @@
+<ng-template #modal>
+    <div class="modal-header">
+        <h5 class="modal-title">{{modalConfig.titulo}}</h5>
+    </div>
+    <div class="modal-body">
+        <ng-content></ng-content>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="descartar()"
+            *ngIf="modalConfig.ocultarBotonDescartar === undefined || !modalConfig.ocultarBotonDescartar()"
+            [disabled]="modalConfig.deshabilitarBotonDescartar !== undefined && modalConfig.deshabilitarBotonDescartar()">
+            {{modalConfig.etiquetaBotonDescartar}}
+        </button>
+        <button type="button" class="btn btn-outline-primary" (click)="cerrar()"
+            *ngIf="modalConfig.ocultarBotonCerrar === undefined || !modalConfig.ocultarBotonCerrar()"
+            [disabled]="modalConfig.deshabilitarBotonCerrar !== undefined && modalConfig.deshabilitarBotonCerrar()">
+            {{modalConfig.etiquetaBotonCerrar}}
+        </button>
+    </div>
+</ng-template>
