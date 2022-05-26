@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Formulario de registro</h1>
+            <ngb-alert *ngIf="mostrarAlerta" [type]="'danger'" (closed)="mostrarAlerta=false" >El usuario que intenta registrar ya se encuentra registrado</ngb-alert>
+            <form (ngSubmit)="registrarUsuario()">
+                <app-formulario-compartido [grupoPadre]="registroFormulario"></app-formulario-compartido>
+                <button type="submit" class="btn btn-primary" [disabled]="!registroFormulario.valid">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>

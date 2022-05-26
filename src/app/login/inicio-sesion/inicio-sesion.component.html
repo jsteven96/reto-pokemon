@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="imagen">
+                <img class="imagen__logo" src="assets/imagenes/poke_logo.jpg" alt="Logo reto">
+            </div>
+            <ngb-alert *ngIf="mostrarAlerta"  [type]="'danger'" (closed)="mostrarAlerta=false" >El usuario no está registrado</ngb-alert>
+            <form (ngSubmit)="validarDatos()">
+                <app-formulario-compartido [grupoPadre]="inicioSesionFormulario"></app-formulario-compartido>
+                <button type="submit" class="btn btn-primary" [disabled]="!inicioSesionFormulario.valid">Ingresar</button>
+                <button type="button" class="btn btn-secondary m-1" (click)="navegarARegistro()">¿Olvidaste tu contraseña?</button>
+            </form>
+        </div>
+    </div>
+</div>
