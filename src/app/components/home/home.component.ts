@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  criterio = '';
+
   constructor(private consultaUsuarioService: ConsultaUsuariosService,
               private router: Router) { }
 

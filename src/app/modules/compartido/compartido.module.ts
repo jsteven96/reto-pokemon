@@ -1,9 +1,11 @@
+import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { GrillaTarjetasComponent } from './grilla-tarjetas/grilla-tarjetas.component';
+import { FiltroComponent } from './filtro/filtro.component';
 
 
 
@@ -11,14 +13,17 @@ import { GrillaTarjetasComponent } from './grilla-tarjetas/grilla-tarjetas.compo
   declarations: [
     ModalComponent,
     TarjetaComponent,
-    GrillaTarjetasComponent
+    GrillaTarjetasComponent,
+    FiltroComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ModalComponent,
-    GrillaTarjetasComponent
+    GrillaTarjetasComponent,
+    FiltroComponent
   ]
 })
 export class CompartidoModule { }

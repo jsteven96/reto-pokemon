@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-lg-3" *ngFor="let pokemon of pokemones" >
-            <app-tarjeta [pokemon]="pokemon"></app-tarjeta>
+        <app-filtro (criterio)="analizarCriterio($event)"></app-filtro>
+        <div class="col-xs-12 col-lg-3 mt-2" *ngFor="let pokemon of pokemonesFiltrado" >
+            <app-tarjeta [nombrePokemon]="pokemon.name ? pokemon.name: ''"></app-tarjeta>
         </div>
     </div>
 </div>

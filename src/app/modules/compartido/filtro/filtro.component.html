@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex flex-column mb-1">
+                <label for="user" class="form-label">Criterio</label>
+                <input type="text" class="form-control" [(ngModel)]="criterioEscrito">
+            </div>
+            <button type="button" class="btn btn-primary m-1" (click)="emitirCriterio()" >Consultar</button>
+        </div>
+    </div>
+</div>

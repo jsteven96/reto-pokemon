@@ -1,3 +1,4 @@
+import { Sprites } from './sprites.model';
 export interface Pokemon {
     id?: number;
     name: string;
@@ -7,4 +8,5 @@ export interface Pokemon {
     order?: number;
     weight?: number;
     url?: string;
+    sprites?: Sprites
 }
