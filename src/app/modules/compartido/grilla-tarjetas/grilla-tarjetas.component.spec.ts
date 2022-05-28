@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GrillaTarjetasComponent } from './grilla-tarjetas.component';
 
-describe('GrillaTarjetasComponent', () => {
+xdescribe('GrillaTarjetasComponent', () => {
   let component: GrillaTarjetasComponent;
   let fixture: ComponentFixture<GrillaTarjetasComponent>;
 
