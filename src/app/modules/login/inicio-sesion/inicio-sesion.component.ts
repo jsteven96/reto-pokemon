@@ -5,6 +5,12 @@ import { User } from './../../../models/user.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import {
+  NgbCalendar,
+  NgbDate,
+  NgbDatepickerNavigateEvent,
+  NgbDateStruct,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -12,6 +18,12 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./inicio-sesion.component.scss'],
 })
 export class InicioSesionComponent implements OnInit {
+  primerDia: NgbDate | undefined;
+  ultimoDia: NgbDate | undefined;
+  model: NgbDateStruct | undefined;
+  dateRep: NgbDate | undefined;
+  date: NgbDate | undefined;
+
   inicioSesionFormulario: FormGroup | any;
   mostrarAlerta = false;
   usuarios: User[] = [];
@@ -19,7 +31,8 @@ export class InicioSesionComponent implements OnInit {
   constructor(
     private sharedFormService: SharedFormService,
     private router: Router,
-    private consultaUsuariosService: ConsultaUsuariosService
+    private consultaUsuariosService: ConsultaUsuariosService,
+    private calendar: NgbCalendar
   ) {}
 
   ngOnInit(): void {
@@ -48,5 +61,28 @@ export class InicioSesionComponent implements OnInit {
 
   navegarARegistro() {
     this.router.navigate(['registro']);
+  }
+
+  alSeleccionarDia(event: NgbDate) {
+    this.date = event;
+    this.primerDia = this.calendar.getNext(
+      this.calendar.getPrev(
+        this.date,
+        'd',
+        this.calendar.getWeekday(this.date)
+      ),
+      'd',
+      1
+    );
+
+    this.ultimoDia = this.calendar.getNext(
+      this.calendar.getPrev(
+        this.date,
+        'd',
+        this.calendar.getWeekday(this.date)
+      ),
+      'd',
+      7
+    );
   }
 }

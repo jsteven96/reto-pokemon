@@ -13,5 +13,12 @@
                 <button type="button" class="btn btn-secondary m-1" (click)="navegarARegistro()">Registrarse</button>
             </form>
         </div>
+        <div class="col-12">
+            <h3>Calendario</h3>
+            <ngb-datepicker [(ngModel)]="model" (dateSelect)="alSeleccionarDia($event)"></ngb-datepicker>
+            <p>{{model | json}}</p>
+            <p>{{primerDia | json}}</p>
+            <p>{{ultimoDia | json}}</p>
+        </div>
     </div>
 </div>

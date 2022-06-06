@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -31,7 +31,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormularioCompartidoModule,
     NgbAlertModule,
-    CompartidoModule
+    CompartidoModule,
+    NgbModule
   ],
   exports: [RouterModule]
 })
