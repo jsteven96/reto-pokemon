@@ -65,15 +65,11 @@ export class InicioSesionComponent implements OnInit {
 
   alSeleccionarDia(event: NgbDate) {
     this.date = event;
-    this.primerDia = this.calendar.getNext(
-      this.calendar.getPrev(
+    this.primerDia = this.calendar.getPrev(
         this.date,
         'd',
         this.calendar.getWeekday(this.date)
-      ),
-      'd',
-      1
-    );
+      );
 
     this.ultimoDia = this.calendar.getNext(
       this.calendar.getPrev(
@@ -82,7 +78,7 @@ export class InicioSesionComponent implements OnInit {
         this.calendar.getWeekday(this.date)
       ),
       'd',
-      7
+      6
     );
   }
 }
