@@ -43,7 +43,7 @@ describe('ConsultaUsuariosService', () => {
 
   describe('Tests para ConsultaUsuariosService', () => {
     it('buscarUsuarioEnLista deberia retornar un usuario a partir de un criterio', () => {
-      expect(service.buscarUsuarioEnLista(usuarios, 'juan')).toEqual({
+      expect(service.buscarUsuarioEnLista(usuarios, 'juan', 'ejemplo')).toEqual({
         nombre: 'juan',
         autenticado: false,
         contrasenia: 'ejemplo',

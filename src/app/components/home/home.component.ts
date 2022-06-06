@@ -8,15 +8,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
-  criterio = '';
-
+export class HomeComponent {
   constructor(
     private consultaUsuarioService: ConsultaUsuariosService,
     private router: Router
   ) {}
-
-  ngOnInit(): void {}
 
   cerrarSesion() {
     this.consultaUsuarioService.cambiarEstadoUsuarioTodosLosUsuarios(false);
