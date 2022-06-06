@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" (click)="seleccionarTarjeta()">
     <img class="card-img-top tarjeta__imagen" [src]="(pokemon.sprites != undefined && pokemon.sprites.front_default != null) ? pokemon.sprites.front_default : 'assets/imagenes/pokeball.png'" alt="Imagen frontal">
     <div class="card-body">
         <h5 class="card-title">

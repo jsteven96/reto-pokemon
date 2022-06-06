@@ -18,7 +18,9 @@ export class RegistroComponent implements OnInit {
   mostrarAlerta = false;
   usuarios: User[] = [];
   modalConfig: ModalConfig;
-  @ViewChild('modal', {static: true}) private modalComponent: ModalComponent | any;
+  @ViewChild('modal', { static: true }) private modalComponent:
+    | ModalComponent
+    | any;
 
   constructor(
     private sharedFormService: SharedFormService,
@@ -32,9 +34,9 @@ export class RegistroComponent implements OnInit {
         return true;
       },
       ocultarBotonDescartar: () => {
-        return true
-      }
-    }
+        return true;
+      },
+    };
   }
 
   ngOnInit(): void {
@@ -47,16 +49,11 @@ export class RegistroComponent implements OnInit {
 
   async registrarUsuario() {
     this.obtenerUsuarios();
-    console.log(
-      this.consultaUsuariosService.buscarUsuarioEnLista(
-        this.usuarios,
-        this.registroFormulario.value.usuario
-      )
-    );
     if (
       !this.consultaUsuariosService.buscarUsuarioEnLista(
         this.usuarios,
-        this.registroFormulario.value.usuario
+        this.registroFormulario.value.usuario,
+        this.registroFormulario.value.contrasenia
       )
     ) {
       const usuarioFormulario: User = {

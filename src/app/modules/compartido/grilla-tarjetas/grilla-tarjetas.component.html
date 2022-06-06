@@ -1,8 +1,31 @@
 <div class="container">
     <div class="row">
+        <div class="col-12">
+            <app-modal #modal [modalConfig]="configuracionModal">
+                <div class="modal__contenido">
+                    <h5>{{pokemonSeleccionado?.name | titlecase}}</h5>
+                    <img *ngIf="pokemonSeleccionado" class="modal__imagen"
+                        [src]="(pokemonSeleccionado.sprites != undefined && pokemonSeleccionado.sprites.front_default != null) ? pokemonSeleccionado.sprites.front_default : 'assets/imagenes/pokeball.png'"
+                        alt="Imagen del pokemon">
+                    <ul>
+                        <li><span>Id:</span> {{pokemonSeleccionado?.id}}</li>
+                        <li><span>Experiencia de base:</span> {{pokemonSeleccionado?.base_experience}}</li>
+                        <li><span>Altura:</span> {{pokemonSeleccionado?.height}}</li>
+                        <li><span>Anchura:</span> {{pokemonSeleccionado?.weight}}</li>
+                        <li> Estadisticas
+                            <ul>
+                                <li *ngFor="let forStat of pokemonSeleccionado?.stats">{{forStat.stat.name}}:
+                                    {{forStat.base_stat}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </app-modal>
+        </div>
         <app-filtro (criterio)="analizarCriterio($event)"></app-filtro>
-        <div class="col-xs-12 col-lg-3 mt-2" *ngFor="let pokemon of pokemonesFiltrado" >
-            <app-tarjeta [nombrePokemon]="pokemon.name ? pokemon.name: ''"></app-tarjeta>
+        <div class="col-xs-12 col-lg-3 mt-3" *ngFor="let pokemon of pokemonesFiltrado">
+            <app-tarjeta [nombrePokemon]="pokemon.name ? pokemon.name: ''"
+                (pokemonSeleccionado)="mostrarDetalle($event)"></app-tarjeta>
         </div>
     </div>
 </div>

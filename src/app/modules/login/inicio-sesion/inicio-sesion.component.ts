@@ -28,8 +28,17 @@ export class InicioSesionComponent implements OnInit {
   }
 
   validarDatos() {
-    if(this.consultaUsuariosService.buscarUsuarioEnLista(this.usuarios, this.inicioSesionFormulario.value.usuario)) {
-      this.consultaUsuariosService.cambiarEstadoUsuario(this.inicioSesionFormulario.value.usuario, true);
+    if (
+      this.consultaUsuariosService.buscarUsuarioEnLista(
+        this.usuarios,
+        this.inicioSesionFormulario.value.usuario,
+        this.inicioSesionFormulario.value.contrasenia
+      )
+    ) {
+      this.consultaUsuariosService.cambiarEstadoUsuario(
+        this.inicioSesionFormulario.value.usuario,
+        true
+      );
       this.router.navigate(['home']);
     } else {
       this.inicioSesionFormulario.reset();

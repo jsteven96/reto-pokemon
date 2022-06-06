@@ -7,8 +7,16 @@ import { Injectable } from '@angular/core';
 export class ConsultaUsuariosService {
   constructor() {}
 
-  buscarUsuarioEnLista(usuarios: User[], criterio: string) {
-    return usuarios.find((user) => user.nombre === criterio);
+  buscarUsuarioEnLista(
+    usuarios: User[],
+    criterioUsuario: string,
+    criterioContrasenia: string
+  ) {
+    return usuarios.find(
+      (user) =>
+        user.nombre === criterioUsuario &&
+        user.contrasenia === criterioContrasenia
+    );
   }
 
   consultarUsuarios(): User[] {
@@ -25,7 +33,7 @@ export class ConsultaUsuariosService {
           nombre: elemento.nombre,
           contrasenia: elemento.contrasenia,
           autenticado: estado,
-        }
+        };
       }
       return elemento;
     });
@@ -41,7 +49,7 @@ export class ConsultaUsuariosService {
           nombre: elemento.nombre,
           contrasenia: elemento.contrasenia,
           autenticado: estado,
-        }
+        };
       }
       return elemento;
     });
@@ -51,6 +59,6 @@ export class ConsultaUsuariosService {
   buscarUsuarioAutenticado() {
     const stringData = sessionStorage.getItem('datosUsuario');
     const datosUsuarios: User[] = JSON.parse(stringData ? stringData : '[]');
-    return datosUsuarios.some(usuario => usuario.autenticado);
+    return datosUsuarios.some((usuario) => usuario.autenticado);
   }
 }
