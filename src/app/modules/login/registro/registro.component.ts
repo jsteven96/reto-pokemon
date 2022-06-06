@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ModalComponent } from './../../compartido/modal/modal.component';
+import { ModalComponent } from '../../compartido/moleculas/modal/modal.component';
 import { ModalConfig } from './../../../models/modal-config.model';
 import { ConsultaUsuariosService } from './../../../services/consulta-usuarios.service';
 import { SharedFormService } from './../../../services/shared-form.service';

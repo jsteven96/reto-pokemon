@@ -1,8 +1,8 @@
-import { ModalComponent } from './../modal/modal.component';
-import { ModalConfig } from './../../../models/modal-config.model';
-import { RespuestaServicioPokemon } from './../../../models/respuesta-servicio-pokemon.model';
-import { PokemonService } from './../../../services/pokemon.service';
-import { Pokemon } from './../../../models/pokemon.model';
+import { ModalComponent } from '../../moleculas/modal/modal.component';
+import { ModalConfig } from '../../../../models/modal-config.model';
+import { RespuestaServicioPokemon } from '../../../../models/respuesta-servicio-pokemon.model';
+import { PokemonService } from '../../../../services/pokemon.service';
+import { Pokemon } from '../../../../models/pokemon.model';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 @Component({

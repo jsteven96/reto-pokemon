@@ -1,4 +1,4 @@
-import { ModalConfig } from '../../../models/modal-config.model';
+import { ModalConfig } from '../../../../models/modal-config.model';
 import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 

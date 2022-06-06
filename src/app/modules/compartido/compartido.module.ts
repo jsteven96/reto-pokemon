@@ -1,11 +1,11 @@
 import { FormsModule } from '@angular/forms';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent } from './moleculas/modal/modal.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TarjetaComponent } from './tarjeta/tarjeta.component';
-import { GrillaTarjetasComponent } from './grilla-tarjetas/grilla-tarjetas.component';
-import { FiltroComponent } from './filtro/filtro.component';
+import { TarjetaComponent } from './atomos/tarjeta/tarjeta.component';
+import { GrillaTarjetasComponent } from './organismos/grilla-tarjetas/grilla-tarjetas.component';
+import { FiltroComponent } from './moleculas/filtro/filtro.component';
 
 
 
