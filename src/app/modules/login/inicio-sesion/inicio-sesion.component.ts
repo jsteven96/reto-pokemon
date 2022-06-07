@@ -64,21 +64,27 @@ export class InicioSesionComponent implements OnInit {
   }
 
   alSeleccionarDia(event: NgbDate) {
+    // Para una semana de lunes a domingo sumar 6 dias al weekday
+    // para una semana de Domingo a Sábado sumar 7 dias al weekday
     this.date = event;
-    this.primerDia = this.calendar.getPrev(
+    this.primerDia = 
+      this.calendar.getPrev(
         this.date,
         'd',
-        this.calendar.getWeekday(this.date)
+        ((this.calendar.getWeekday(this.date) + 6) % 7)
       );
+
+     /* 
 
     this.ultimoDia = this.calendar.getNext(
       this.calendar.getPrev(
         this.date,
         'd',
-        this.calendar.getWeekday(this.date)
+        ((this.calendar.getWeekday(this.date) + 7) % 7)
       ),
       'd',
       6
-    );
+    );*/
+    this.ultimoDia = this.calendar.getNext(this.primerDia, 'd', 6);
   }
 }
